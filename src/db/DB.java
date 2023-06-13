@@ -13,16 +13,16 @@ public class DB {
 	
 	private static Connection conn = null;
 	
-	private static final String DB_URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl";
-    private static final String USERNAME = "RM97160";
-    private static final String PASSWORD = "180502";
+	private static final String DB_URL = "jdbc:oracle:thin:@//localhost:1521/orcl";
+    private static final String USERNAME = "seu_usuario";
+    private static final String PASSWORD = "sua_senha";
 
     public static Connection getConnection() throws SQLException {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             return DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException e) {
-            throw new SQLException("Oracle JDBC driver n„o encontrado", e);
+            throw new SQLException("Oracle JDBC driver n√£o encontrado", e);
         }
     }
 	
